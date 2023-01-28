@@ -24,7 +24,7 @@ def otszazotvenot_labnal_magasabb_szama(lista):
     i = 0
     db = 0
     while i < len(lista):
-        if 555 < (lista[i].magassag * 3.280839895):
+        if 555 < (lista[i].get_magassag() * 3.280839895):
             db+=1
         i+=1
     print(f"III/C:\n\tAz 555 lábnál magasabb épületek száma: {db}.")
@@ -35,9 +35,9 @@ def legoregebb_epulet(lista):
     i = 1
     while i < len(lista):
         aktualis = i
-        if lista[aktualis].epules_eve < lista[legoregebb].epules_eve:
+        if lista[aktualis].get_epules_eve() < lista[legoregebb].get_epules_eve():
             legoregebb = aktualis
         i+=1
-    kimenet = lista[legoregebb].orszag
+    kimenet = lista[legoregebb].get_orszag()
     print(f"III/D:\n\tA legöregebb épület országa: {kimenet}.")
     return kimenet
